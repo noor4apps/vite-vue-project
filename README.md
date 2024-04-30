@@ -14,3 +14,7 @@ create a basic component and consume that from another component/view
 ## Data Model Interfaces
 
 leverage TypeScript interfaces
+
+## Adding Events To the Items Component
+
+Building Interactive Items: Click Handlers, Reactive State, and Custom Events
