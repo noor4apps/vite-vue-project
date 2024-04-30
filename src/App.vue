@@ -34,3 +34,9 @@ const onSelectItem = (id: number) => {
     <itemsListComponent :items="items" @selectItem="onSelectItem"/>
   </div>
 </template>
+
+<style>
+.home {
+  padding: 20px;
+}
+</style>
