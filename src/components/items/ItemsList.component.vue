@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import type {ItemInterface} from '../../models/items/Item.interface'
+import type {ItemInterface} from '@/models/items/Item.interface'
 import ItemComponent from './children/Item.component.vue'
 
-defineProps<{ items: ItemInterface[] }>()
+defineProps<{
+  items: ItemInterface[]
+  loading: boolean
+}>()
 
 const emit = defineEmits<{ (e: 'selectItem', id: number): any }>()
 const onSelectItem = (id: number) => {
@@ -12,7 +15,7 @@ const onSelectItem = (id: number) => {
 
 <template>
   <div>
-    <h3>Items:</h3>
+    <h3>Items - loading: {{loading}}:</h3>
     <ul>
       <ItemComponent v-for="item in items" :key="item.id" :model="item" @selectItem="onSelectItem"/>
     </ul>
