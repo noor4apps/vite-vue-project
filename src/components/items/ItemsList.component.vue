@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type {ItemInterface} from '@/models/items/Item.interface'
 import ItemComponent from './children/Item.component.vue'
+import Loader from '@/components/shared/Loader.component.vue'
 
 defineProps<{
   items: ItemInterface[]
@@ -15,8 +16,9 @@ const onSelectItem = (id: number) => {
 
 <template>
   <div>
-    <h3>Items - loading: {{loading}}:</h3>
-    <ul>
+    <h3>Items:</h3>
+    <Loader :loading="loading" />
+    <ul v-show="!loading">
       <ItemComponent v-for="item in items" :key="item.id" :model="item" @selectItem="onSelectItem"/>
     </ul>
   </div>

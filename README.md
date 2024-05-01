@@ -37,3 +37,7 @@ start using a shortcut like @ and avoid relative paths
 ```shell
 npm install -D @types/node
 ```
+
+## State Management
+* Building a Modular State Manager with Vue Writable Stores
+* Creating a Reusable Loader Component
