@@ -41,3 +41,7 @@ npm install -D @types/node
 ## State Management
 * Building a Modular State Manager with Vue Writable Stores
 * Creating a Reusable Loader Component
+
+## Api Client
+* implement an apiClient that automatically can serve either mock or real data
+* invoke our api client from the store
