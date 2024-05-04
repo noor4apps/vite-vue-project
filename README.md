@@ -45,3 +45,10 @@ npm install -D @types/node
 ## Api Client
 * implement an apiClient that automatically can serve either mock or real data
 * invoke our api client from the store
+
+## Enhance the Api Client
+
+Abstract the http client methods into their own implementation that we can then consume from our ItemsApiClient and future API clients implementations that we’ll be adding later.
+
+create a class that wraps our calls done with axios in one place. We’ll call this the HttpClient class and here we’ll implement code that allow us to perform http requests using axios for now. 
+If later we have to switch to a different NPM library or use the Fetch API etc, we’ll jsut need to update the code without our HttpClient. 
