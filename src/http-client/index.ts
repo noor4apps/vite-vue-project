@@ -1,5 +1,5 @@
 import {HttpClientInterface} from './models/HttpClient.interface'
-// import {config} from '@/config'
+import {config} from '@/config'
 
 import {HttpClientAxios} from './models/HttpClient.axios'
 import {HttpClientFetch} from './models/HttpClient.fetch'
@@ -13,7 +13,7 @@ let _httpClient: HttpClientInterface | undefined = undefined
 export const useHttpClient = () => {
     if (!_httpClient) {
         // export instance of HttpClientInterface
-        const clientType = 'fetch';
+        const clientType = config.httpClient.clientType;
 
         // if you'd like to use axios, set "clientType": "axios" within the config files (section "httpClient")
         if (clientType === "fetch") {
