@@ -56,3 +56,16 @@ If later we have to switch to a different NPM library or use the Fetch API etc, 
 ## App Configuration
 
 We need now to add a way to configure our app through configuration files for different environments (i.e. mock, beta, production, etc).
+
+## Localization and Internationalization - Language Localization
+
+present the UI in different languages
+
+leverage plugins that allows us to present labels in different languages (i18next, vue-i18n)
+
+Let’s start by first adding the i18next and vue-i18n NPM packages to our application. In particular, we’ll be installing vue-18n-next which is for Vue 3.
+
+```shell
+npm install --save i18next vue-i18n
+```
+We will be introducing a concept of versioning here to dynamically drive different versions of data, introduce/retire views and components overtime, or expire cached data on the browser.

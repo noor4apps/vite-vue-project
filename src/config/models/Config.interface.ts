@@ -1,4 +1,4 @@
-import {ItemsApiClientOptions} from '@/api-client/models'
+import {ItemsApiClientOptions, LocalizationApiClientOptions} from '@/api-client/models'
 
 export interface HttpClientConfigInterface {
     tokenKey: string;
@@ -23,5 +23,11 @@ export interface ConfigInterface {
 
     items: {
         apiClientOptions: ItemsApiClientOptions;
+    };
+
+    localization: {
+        apiClientOptions: LocalizationApiClientOptions;
+        locales: { key: string; isDefault: boolean }[];
+        localStorageCache: { enabled: boolean; expirationInMinutes: number };
     };
 }

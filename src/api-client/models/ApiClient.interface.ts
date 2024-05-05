@@ -1,4 +1,5 @@
 import {ItemsApiClientInterface} from './items'
+import {LocalizationApiClientInterface} from './localization'
 
 /**
  * @Name ApiClientInterface
@@ -7,4 +8,5 @@ import {ItemsApiClientInterface} from './items'
  */
 export interface ApiClientInterface {
     items: ItemsApiClientInterface
+    localization: LocalizationApiClientInterface
 }

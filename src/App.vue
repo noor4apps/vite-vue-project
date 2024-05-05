@@ -1,13 +1,21 @@
 <script setup lang="ts">
+import {onMounted} from 'vue'
 import ItemsView from './views/Items.view.vue'
-// store a reference to import meta env into a var
-const metaEnv = import.meta.env
+import LocaleSelector from '@/components/shared/LocaleSelector.component.vue'
+import {useLocalization} from '@/localization'
+// get what we need from useLocalization:
+const {t, currentLocale, changeLocale} = useLocalization();
+
+onMounted(() => {
+  changeLocale(currentLocale.value);
+});
 </script>
 
 <template>
   <div class="home">
-    [{{ metaEnv }}]
-    <ItemsView />
+    <LocaleSelector/>
+    <h3>{{ t("home.welcome") }} [{{ currentLocale }}]</h3>
+    <ItemsView v-if="false"/>
   </div>
 </template>
 
