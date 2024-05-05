@@ -14,16 +14,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="home">
+  <div class="home m-2 p-2 border-2 border-red-500">
     <LocaleSelector/>
     <h3>{{ t("home.welcome") }} [{{ currentLocale }}]</h3>
     <ItemsView v-if="false"/>
     <DebugFormatters :show="true"/>
   </div>
 </template>
-
-<style>
-.home {
-  padding: 20px;
-}
-</style>

@@ -76,3 +76,16 @@ adding Number and DateTime value formatters.
 We’ll leverage the Intl API which is supported by all major web browsers.
 
 Note: this is the same code from a plugin published here and you could use it in other apps in the future without coding it yourself if you prefer: @builtwithjavascript/formatters
+
+## Adding Tailwind CSS
+
+To add TailwindCSS to our existing project execute this command. 
+This will install the latest tailwindcss, postcss and autoprefixer npm packages:
+```shell
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+```
+
+The following command will create the preliminary tailwind.config.js and postcss.config.js
+```shell
+npx tailwindcss init -p
+```
