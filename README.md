@@ -69,3 +69,10 @@ Let’s start by first adding the i18next and vue-i18n NPM packages to our appli
 npm install --save i18next vue-i18n
 ```
 We will be introducing a concept of versioning here to dynamically drive different versions of data, introduce/retire views and components overtime, or expire cached data on the browser.
+
+## Localization and Internationalization - Number and DateTime Formatters
+
+adding Number and DateTime value formatters. 
+We’ll leverage the Intl API which is supported by all major web browsers.
+
+Note: this is the same code from a plugin published here and you could use it in other apps in the future without coding it yourself if you prefer: @builtwithjavascript/formatters

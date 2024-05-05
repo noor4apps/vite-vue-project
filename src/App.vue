@@ -3,6 +3,8 @@ import {onMounted} from 'vue'
 import ItemsView from './views/Items.view.vue'
 import LocaleSelector from '@/components/shared/LocaleSelector.component.vue'
 import {useLocalization} from '@/localization'
+import DebugFormatters from '@/components/shared/DebugFormatters.component.vue'
+
 // get what we need from useLocalization:
 const {t, currentLocale, changeLocale} = useLocalization();
 
@@ -16,6 +18,7 @@ onMounted(() => {
     <LocaleSelector/>
     <h3>{{ t("home.welcome") }} [{{ currentLocale }}]</h3>
     <ItemsView v-if="false"/>
+    <DebugFormatters :show="true"/>
   </div>
 </template>
 
