@@ -97,3 +97,5 @@ npx tailwindcss init -p
 * One of the convention we will follow is to put all our primitive components under the directory src/components/primitives
 
 * We’ll follow also a naming convention where each .vue file that represents a primitive will start with the El prefix. I.e. ElText.vue, ElIcon.vue, etc. In this case El is for “element”.
+
+## More Primitives
