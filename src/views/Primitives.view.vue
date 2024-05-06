@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import ElText from '@/components/primitives/text/ElText.vue'
-import ElButton from '@/components/primitives/Button/ElButton.vue'
-import ElToggle from '@/components/primitives/toggles/ElToggle.vue'
+import {ElText, ElButton, ElToggle, ElIcon, useModalDialog} from '@/components/primitives'
 
 const onButtonClicked = async (id: string) => {
   console.log('PrimitivesView: onButtonClicked', id)
@@ -33,6 +31,34 @@ const state = reactive({
     },
   ],
 })
+
+const onOpenDialogClicked = async (id: string) => {
+  console.log('PrimitivesView: onOpeanDialogClicked', id)
+  // handle the new buttons with id "open-modal-x" (we'll be adding shortly)
+  if (id === 'open-modal-1') {
+    // here we invoke our useModal with the custom labels for the buttons
+    // then we invoke modal.prompt() and await it
+    const result = await useModalDialog({
+      cancelLabel: 'Cancel',
+      confirmLabel: 'Ok',
+      primaryButtonType: 'danger',
+    }).prompt('Some Title', 'Do you want to delete this record?')
+    // the result will be true if the user click on confirm, or false if click on Cancel
+    console.log('----- PrimitivesView: onButtonClicked: modal-1 prompt result', result);
+  } else if (id === 'open-modal-2') {
+    // here we invoke our useModal with the custom labels for the buttons
+    // then we invoke modal.prompt() and await it
+    const result = await useModalDialog({
+      cancelLabel: 'Cancel',
+      confirmLabel: 'Confirm',
+      icon: ElIcon, // here we use the icon component created earlier
+      iconAddCss: 'text-red-600',
+    }).prompt('Do you want to delete this record?');
+    // the result will be true if the user click on confirm, or false if click on Cancel
+    console.log('----- PrimitivesView: onButtonClicked: modal-2 prompt result', result);
+  }
+}
+
 </script>
 
 <template>
@@ -49,6 +75,9 @@ const state = reactive({
       <ElButton id="my-button-1" :disabled="false" label="This is a button" @clicked="onButtonClicked"/>
       <ElButton buttonType="danger" id="my-button-2" :disabled="false" label="This is a button danger" @clicked="onButtonClicked"/>
       <ElButton id="my-button-3" :disabled="true" label="This is a disabled button" @clicked="onButtonClicked"/>
+
+      <ElButton id="open-modal-1" :disabled="false" label="Open modal 1" @clicked="onOpenDialogClicked"/>
+      <ElButton id="open-modal-2" :disabled="false" label="Open modal 2" @clicked="onOpenDialogClicked"/>
     </div>
 
     <ElText tag="h2" addCss="text-gray-500" text="ElToggle examples:"/>
@@ -57,5 +86,7 @@ const state = reactive({
       <ElToggle id="toggle-b" :checked="state.toggles.find((item) => item.id === 'toggle-b').checked" :disabled="true" addCss="ml-2" @clicked="onToggleClicked"/>
       <ElToggle id="toggle-c" :checked="state.toggles.find((item) => item.id === 'toggle-c').checked" :disabled="false" addCss="ml-2" @clicked="onToggleClicked"/>
     </div>
+
+    <ElIcon/>
   </div>
 </template>
