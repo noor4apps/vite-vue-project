@@ -5,6 +5,7 @@ import LocaleSelector from '@/components/shared/LocaleSelector.component.vue'
 import {useLocalization} from '@/localization'
 import DebugFormatters from '@/components/shared/DebugFormatters.component.vue'
 import PrimitivesView from '@/views/Primitives.view.vue'
+import {Counter, SampleComp} from 'vite-vue-component-library'
 
 // get what we need from useLocalization:
 const {t, currentLocale, changeLocale} = useLocalization();
@@ -18,8 +19,10 @@ onMounted(() => {
   <div class="home m-2 p-2 border-2 border-red-500">
     <LocaleSelector/>
     <h3>{{ t("home.welcome") }} [{{ currentLocale }}]</h3>
-    <ItemsView v-if="true"/>
+    <ItemsView v-if="false"/>
     <DebugFormatters :show="false"/>
     <PrimitivesView v-if="false"/>
+    <SampleComp text="This is a sample component from vite-vue-component-library" />
+    <Counter />
   </div>
 </template>

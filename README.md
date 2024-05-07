@@ -103,3 +103,10 @@ npx tailwindcss init -p
 ## Higher-level components
 
 Consume the primitives we created so far within the Item component.
+
+## Consuming our library
+To consume our library locally, let’s switch now to our vite-vue-project and install a reference to our library by running this command:
+
+```shell
+npm install -D file:../vite-vue-component-library
+```
