@@ -99,3 +99,7 @@ npx tailwindcss init -p
 * We’ll follow also a naming convention where each .vue file that represents a primitive will start with the El prefix. I.e. ElText.vue, ElIcon.vue, etc. In this case El is for “element”.
 
 ## More Primitives
+
+## Higher-level components
+
+Consume the primitives we created so far within the Item component.

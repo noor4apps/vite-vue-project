@@ -18,8 +18,8 @@ onMounted(() => {
   <div class="home m-2 p-2 border-2 border-red-500">
     <LocaleSelector/>
     <h3>{{ t("home.welcome") }} [{{ currentLocale }}]</h3>
-    <ItemsView v-if="false"/>
+    <ItemsView v-if="true"/>
     <DebugFormatters :show="false"/>
-    <PrimitivesView/>
+    <PrimitivesView v-if="false"/>
   </div>
 </template>
