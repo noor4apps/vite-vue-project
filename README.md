@@ -110,3 +110,14 @@ To consume our library locally, let’s switch now to our vite-vue-project and i
 ```shell
 npm install -D file:../vite-vue-component-library
 ```
+
+## Consuming the vite-vanilla-typescript library
+Now we have to open the vite-vue-project and consume our helpers library by referencing it from a local path.
+The easiest way is to run the following command
+
+```shell
+npm install -D file:../vite-vanilla-typescript
+```
+Note that we are referencing our helpers library with a relative directory path so it is important that you have create the vite-vanilla-typescript project at the same level of vite-vue-project.
+To test that we can consume our library without problems, open one of the views, maybe App.vue, and import a reference to randomid And then output the value in the UI with some HTML like:
+<p>[randomid() result (from vite-vanilla-typescript): {{ randomid() }}]</p>

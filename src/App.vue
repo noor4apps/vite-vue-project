@@ -6,6 +6,7 @@ import {useLocalization} from '@/localization'
 import DebugFormatters from '@/components/shared/DebugFormatters.component.vue'
 import PrimitivesView from '@/views/Primitives.view.vue'
 import {Counter, SampleComp} from 'vite-vue-component-library'
+import {randomid} from 'vite-vanilla-typescript'
 
 // get what we need from useLocalization:
 const {t, currentLocale, changeLocale} = useLocalization();
@@ -24,5 +25,6 @@ onMounted(() => {
     <PrimitivesView v-if="false"/>
     <SampleComp text="This is a sample component from vite-vue-component-library" />
     <Counter />
+    <p>[randomid() result (from vite-vanilla-typescript): {{ randomid() }}]</p>
   </div>
 </template>
